@@ -1,7 +1,7 @@
 const navbar = document.getElementById('nav');
 const brandName = document.getElementById('brand');
 const searchKey = document.getElementById('searchKey');
-const searchBtn = document.getElementById('searchBtn');
+// const searchBtn = document.getElementById('searchBtn');
 const searchQuery = document.getElementById('searchQuery');
 const column1 = document.getElementById('col-1');
 const column2 = document.getElementById('col-2');
@@ -85,12 +85,12 @@ function displayFullImage(src) {
 	myModal.show();
 }
 
-searchBtn.addEventListener('click', function() {
-	if (searchKey.value != '') {
-		// searchUrl += searchKey.value;
-		fetchSearchData(searchKey.value);
-	}
-});
+// searchBtn.addEventListener('click', function() {
+// 	if (searchKey.value != '') {
+// 		// searchUrl += searchKey.value;
+// 		fetchSearchData(searchKey.value);
+// 	}
+// });
 
 
 const fetchSearchData = async (key) => {
@@ -126,7 +126,7 @@ searchKey.onsubmit = function(event) {
 }
 searchKey.addEventListener('keydown', function(event) {
 	if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-		console.log('ffffffffffffffff');
+		// console.log('ffffffffffffffff');
 		// searchBtn.click();
 		fetchSearchData(searchKey.value);
 	}

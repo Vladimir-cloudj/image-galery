@@ -1,3 +1,49 @@
 img:hover {
 	transform: scale(1.01);
 }
+
+
+
+.footer {
+	background-color: rgb(227 226 210);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  font-size: 20px;
+  line-height: 50px;
+  padding: 25px 15px 25px 35px;
+}
+
+.footer__leftside {
+  display: flex;
+  margin-left: 5px;
+}
+
+.footer__year {
+  margin-left: 20px;
+}
+
+.footer__github-link {
+	color: #24334e;
+  margin-left: 20px;
+  transition: 0.3s ease-out;
+}
+
+.footer__github-link:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+
+.footer__middleside {
+  margin-left: 19px;
+}
+
+.footer__rsschool-link {
+	margin-right: 20px;
+	color: #24334e;
+  transition: 0.3s ease-out;
+}
+
+.footer__rsschool-link:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
