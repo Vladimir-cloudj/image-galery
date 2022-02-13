@@ -92,6 +92,7 @@ searchBtn.addEventListener('click', function() {
 	}
 });
 
+
 const fetchSearchData = async (key) => {
 
 	imageURLS = [];
@@ -116,3 +117,17 @@ function orderBy() {
 		fetchData();
 	}
 }
+
+searchKey.onsubmit = function(event) {
+	// var searchValue = this.search.value;
+	// // process
+	// return false;
+	// event.preventDefault()
+}
+searchKey.addEventListener('keydown', function(event) {
+	if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
+		console.log('ffffffffffffffff');
+		// searchBtn.click();
+		fetchSearchData(searchKey.value);
+	}
+})
