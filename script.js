@@ -10,6 +10,8 @@ const errorGrid = document.getElementById('errorGrid');
 const modalBody = document.getElementById('modalBody');
 const imageViewLink = document.getElementById('imageViewLink');
 
+let orderByValue = ''
+
 Api_Key = 'gDzIgtDcB7QqubeHOaeN-SxV1tBxPQF_LE1WuEeOjKQ'
 apiUrl = 'https://api.unsplash.com/photos/?client_id=' + Api_Key + '&per_page=30&page=1';
 searchUrl = 'https://api.unsplash.com/search/photos/?client_id=' + Api_Key + '&per_page=30&page=1&query=';
@@ -53,7 +55,7 @@ function displayImage() {
 		var image = document.createElement('img');
 		image.src = url;
 		image.className = 'mt-3';
-		image.setAttribute('width', '100%')
+		image.setAttribute('width', '100%');
 		image.setAttribute('onckick', 'displayFullImage(this.src)');
 
 		if ((index + 1) % 3 === 0) {
@@ -75,7 +77,7 @@ function displayFullImage(src) {
 
 	modalBody.innerHTML = '';
 	modalBody.appendChild(image);
-	imageViewLink.href = src
+	imageViewLink.href = src;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modal'), {
 		
@@ -88,7 +90,7 @@ searchBtn.addEventListener('click', function() {
 		// searchUrl += searchKey.value;
 		fetchSearchData(searchKey.value);
 	}
-})
+});
 
 const fetchSearchData = async (key) => {
 
@@ -103,4 +105,14 @@ const fetchSearchData = async (key) => {
 		imageURLS.push(element.urls.regular);
 	});
 	displayImage()
+}
+
+function orderBy() {
+	orderByValue = document.getElementById('orderby').value
+	imageURLS = [];
+	if (searchkey!='') {
+		fetchSearchData();
+	} else {
+		fetchData();
+	}
 }
